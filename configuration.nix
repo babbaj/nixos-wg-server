@@ -17,6 +17,7 @@
   services.cloud-init.enable = true;
 
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
+  boot.kernel.sysctl."net.ipv6.ip_forward" = 1;
   networking.firewall.allowedUDPPorts = [ 51820 ];
 
   # we need to wait until cloud-config runs because it writes the private key
@@ -48,6 +49,10 @@
         { # old phone
           allowedIPs = [ "192.168.70.91/32" ];
           publicKey = "8FpQH1M5vygIPM0jno0upHczJBgL8gue3JgXW2djTgk=";
+        }
+        {
+          allowedIPs = [ "192.168.70.100/32" ];
+          publicKey = "Fb0+1EZyDXZD+xKrOsavSO7w+vuPgR2ucPn62dNrBQU=";
         }
       ];
     };

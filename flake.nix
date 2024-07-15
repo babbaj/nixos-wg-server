@@ -9,7 +9,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-generators }: {
+  outputs = { self, nixpkgs, nixos-generators }:
+  {
     packages.x86_64-linux = {
       vpn-server = nixos-generators.nixosGenerate {
         system = "x86_64-linux";
